@@ -36,3 +36,39 @@ Configurable settings stored in ~/.q-claw/settings.json
 
 
 Perfect for: Developers, system administrators, and power users seeking an intelligent, always-available terminal assistant with voice capabilities and web search integration.
+
+
+
+
+# Download and run Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+ollama pull qwen2:0.5b
+
+# Start the Ollama service
+ollama serve
+
+
+
+pip install kokoro-onnx sounddevice numpy --break-system-packages
+
+# Download model files to ~/.q-claw/
+# Visit: https://github.com/remsky/Kokoro-ONNX
+# Download:
+#   - kokoro-v1.0.onnx
+#   - voices-v1.0.bin
+# Place in: ~/Q-Claw/
+
+
+
+
+pip install vosk sounddevice --break-system-packages
+
+# Download and extract Vosk model
+wget https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
+unzip vosk-model-small-en-us-0.15.zip -d ~/.q-claw/vosk-model
+
+
+
+python3 Q-Claw.py
+
